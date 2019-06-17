@@ -1,6 +1,6 @@
-var times = prompt ("Please enter number of times");
-function myGame(trials) {
-	// var trials = prompt ("Please enter number of trials");
+var times = prompt ("Please enter number of times");// prompts for the number of times function should input a number
+function myGame(times) {
+	
 	var i = Math.floor(Math.random() * 100) + 1; //Generates random numbers and stores it in i
 
 	var j=i%2; //gets the modulus of the random number and stores the result in a variable j
@@ -22,9 +22,9 @@ function myGame(trials) {
 	    if (num>i){																									// condition checks if auto gen. number is greater than captured number
 	                alert("Number is higher,make another guess");
 	            }
-	    if (count==trials){    // if condition iterates 10 times with invalid gueses
+	    if (count==times){    // if condition iterates 10 times with invalid gueses
 	            alert("You LOSE!");}
 	}
 }
 
-myGame(times);
+myGame(times); // invokes the function for output
