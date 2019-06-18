@@ -1,30 +1,32 @@
-var times = prompt ("Please enter number of times");
-function myGame(trials) {
-	// var trials = prompt ("Please enter number of trials");
-	var i = Math.floor(Math.random() * 100) + 1; //Generates random numbers and stores it in i
+Number Guessing Game
+var guessingGame = (range, times) => {
+var	x = Math.floor(Math.random()*range)+1; // Computer chooses random number between 1 to 100
 
-	var j=i%2; //gets the modulus of the random number and stores the result in a variable j
-	if (j==0) //checks if j returns a zero or not
-	    alert (" Number is Even"); // if result is zero then j = even
-	else
-	    alert (" Number is odd"); // if result is not zero then j= odd
+var y=x%2 // Check if the the number is even or odd and stores it
 
-	for(var count=1;count<=times; count++) // loop to counter the number of captured inputs
-	{
-	    var num = prompt ("Please enter a number:"); //Captures user input
-	    if (num==i){																// condition checks if auto gen. number is equal to captured number it terminates
-	        alert("You WIN!", +"Clapp for yourself" );
-	        break;
-	    }
-	    if (num<i){																											//condition checks if auto gen. number is les than captured number
-	        alert("Number is lower, make another guess");
-	    }
-	    if (num>i){																									// condition checks if auto gen. number is greater than captured number
-	                alert("Number is higher,make another guess");
-	            }
-	    if (count==trials){    // if condition iterates 10 times with invalid gueses
-	            alert("You LOSE!");}
+if (y==0){ // Check if modulus is 0 and return even or odd
+	alert("Number is even");
+}else{
+	alert("Number is odd");
+}
+for (var i = 1; i <= times; i++) 
+{
+	let num = prompt ("Please enter a number:");
+	// The computer prints a screen which prompts the user to enter a number
+	if (num==x){
+		alert("YOU WIN");
+		break;
+	}
+	if (num<x){
+		alert("Number is lower, make another guess");
+	}
+	if (num>x){
+		alert("Number is greater, make another guess");
+	}
+	if (i==times){
+		alert("YOU LOOSE");
 	}
 }
 
-myGame(times);
+};
+guessingGame(100, 10);
